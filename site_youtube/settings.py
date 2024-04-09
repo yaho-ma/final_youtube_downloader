@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-(rxb9435r#g5&lp63)8-n*#an1!&+cn1$pik-7vw#3otwzztb_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['final-youtube-downloader.onrender.com']
+ALLOWED_HOSTS = ['final-youtube-downloader.onrender.com', 'localhost']
 
 
 # Application definition
