@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import dj_database_url
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,13 +28,14 @@ SECRET_KEY = "django-insecure-(rxb9435r#g5&lp63)8-n*#an1!&+cn1$pik-7vw#3otwzztb_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['final-youtube-downloader.onrender.com', 'localhost']
+ALLOWED_HOSTS = ['final-youtube-downloader.onrender.com', 'localhost',
+                 '127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'my_downloader.apps.MyDownloaderConfig', 
+    'my_downloader.apps.MyDownloaderConfig',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -57,7 +59,9 @@ ROOT_URLCONF = "site_youtube.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [
+            #BASE_DIR / 'templates/my_downloader'
+            ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -83,14 +87,11 @@ DATABASES = {
     }
 }
 
-DATABASES["default"] = dj_database_url.parse("postgres://my_postgresql_database_e634_user:ktXioCQs7zM0IM7sobzmG3C98fYiDnWe@dpg-co8jb60l5elc738vrljg-a.oregon-postgres.render.com/my_postgresql_database_e634")
+DATABASES["default"] = dj_database_url.parse(
+    "postgres://my_postgresql_database_e634_user:ktXioCQs7zM0IM7sobzmG3C98fYiDnWe@dpg-co8jb60l5elc738vrljg-a.oregon-postgres.render.com/my_postgresql_database_e634")
 
 
-
-#postgres://my_postgresql_database_e634_user:ktXioCQs7zM0IM7sobzmG3C98fYiDnWe@dpg-co8jb60l5elc738vrljg-a.oregon-postgres.render.com/my_postgresql_database_e634
-
-
-
+# postgres://my_postgresql_database_e634_user:ktXioCQs7zM0IM7sobzmG3C98fYiDnWe@dpg-co8jb60l5elc738vrljg-a.oregon-postgres.render.com/my_postgresql_database_e634
 
 
 # Password validation
