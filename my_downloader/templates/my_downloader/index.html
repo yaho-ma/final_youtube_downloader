@@ -13,6 +13,11 @@
 
 
 <body>
+
+
+
+    
+
     {% include 'my_downloader/header.html' %}
 
     <div class="container">
@@ -22,17 +27,27 @@
    
    
     
-    <h4>enter youtube link</h4> 
+     
+  
 
     <form action="download/" method="get">
        
         {% csrf_token %}
-        <label for="link"></label>
-        <input type="text" id="link" size="50" name="url">
 
-         
-        {% comment %} <input type="submit" > {% endcomment %}
-        <button type="submit" class="btn btn-success" >Download</button>
+
+        <div style="text-align: center;">
+            <h5>Enter youtube link</h5>
+
+            <label for="link"></label>
+            <input type="text" id="link" size="70" name="url">
+            <button type="submit" class="btn btn-success" >Download</button>
+          </div>
+
+        
+        
+        
+
+        
         
 
     </form>

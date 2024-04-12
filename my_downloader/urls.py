@@ -5,7 +5,7 @@ app_name = 'YT-downloader'
 
 
 urlpatterns = [
-    path('', views.index_view),
+    path('', views.index_view, name = "index"),
     path('download/', views.download_view),
     path('download/<res>/', views.success, name="success"),
 ]

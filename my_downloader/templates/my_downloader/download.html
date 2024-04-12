@@ -15,21 +15,35 @@
 
 <body>
     {% include 'my_downloader/header.html' %}
+    <br>
 
 <div class="container">
+    
+    
 
-<div class="ct">
-        <p>Title: {{title}}</p>
-        <p>By: {{author}}</p>
-        
-        {% comment %} <br>
-        Resolutions: {{onlyres}} {% endcomment %}
-        <img class="thumbnail-image"  src="{{thumbnail}}" alt="Error loading thumnnail">
-</div>
+
+
+    <div class="ct">
+            <p>Title: {{title}}</p>
+            <p>By: {{author}}</p>
+            
+            {% comment %} <br>
+            Resolutions: {{onlyres}} {% endcomment %}
+            <img class="thumbnail-image"  src="{{thumbnail}}" alt="Error loading thumnnail">
+    </div>
+
+
+
+
+
+
+
+
+
 
 
 <div class="div-table">
-    <table class="table table-bordered table-light">
+    <table class="table table-bordered table-light table-sm">
         <thead>
             <tr class="table-heading">
                 <th scope="col">Attributes</th>
@@ -41,11 +55,11 @@
 
         <tbody>
             <tr>
-                <td data-label="Attributes">{{i}}</td>
-                <td data-label="Download">
+                <td  widata-label="Attributes">{{i}}</td>
+                <td  data-label="Download">
                     <form action="{% url 'YT-downloader:success' i %}" method="post">
                         {% csrf_token %}
-                        <button type="submit" value="Download" class="btn btn-success">Download</button>
+                        <button type="submit" value="Download" class="btn btn-success btn-sm">Download</button>
                     </form>
                 </td>
             </tr>
@@ -55,6 +69,14 @@
         </tbody>
     </table>
 </div>
+
+
+
+
+
+
+
+
 </div>
 
 {% include 'my_downloader/footer.html' %}
