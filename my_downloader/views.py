@@ -3,6 +3,7 @@ from pytube import YouTube
 from django.http import HttpResponse
 from wsgiref.util import FileWrapper
 import os
+#import django.core.validators.URLValidator
 
 
 
@@ -16,7 +17,8 @@ def download_view (request):
     global url
     url = request.GET.get('url')
 
-    #print (f' this is my url: {url}')
+
+    print (f' this is my url: {url}')
 
     yt = YouTube(url)
     global global_streams

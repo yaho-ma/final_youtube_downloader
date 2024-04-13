@@ -39,20 +39,28 @@
             <h5>Enter youtube link</h5>
 
             <label for="link"></label>
-            <input type="text" id="link" size="70" name="url">
+            <input 
+            
+            type="url" 
+            id="link" 
+            size="60" 
+            name="url"
+            pattern="/.**./" 
+            required>
+
             <button type="submit" class="btn btn-success" >Download</button>
           </div>
 
-        
-        
-        
+          {{form.url.errors}}
 
         
-        
-
     </form>
 
-    {% include 'my_downloader/footer.html' %}
+    
 </div>
+{% comment %} {% include 'my_downloader/footer.html' %} {% endcomment %}
+
 </body>
+
+
 </html>
